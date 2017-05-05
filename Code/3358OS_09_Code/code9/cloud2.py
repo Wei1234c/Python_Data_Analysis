@@ -31,15 +31,15 @@ sums = np.array(matrix.sum(axis=0)).ravel()
 
 ranks = []
 
-for word, val in itertools.izip(vectorizer.get_feature_names(), sums):
+for word, val in zip(vectorizer.get_feature_names(), sums):
     ranks.append((word, val))
 
 df = pd.DataFrame(ranks, columns=["term", "tfidf"])
 df = df.sort(['tfidf'])
-print df.head()
+print(df.head())
 
 N = int(.01 * len(df))
 df = df.tail(N)
 
-for term, tfidf in itertools.izip(df["term"].values, df["tfidf"].values):
-    print term, ":", tfidf
+for term, tfidf in zip(df["term"].values, df["tfidf"].values):
+    print(term, ":", tfidf)

@@ -13,5 +13,5 @@ df = pd.DataFrame({
    'icecream', 'icecream', 'soup'],
    'Price' : 10 * rand(N), 'Number' : random_integers(1, 9, size=(N,))})
 
-print "DataFrame\n", df
-print pd.pivot_table(df, cols=['Food'], aggfunc=np.sum)
+print("DataFrame\n", df)
+print(pd.pivot_table(df, cols=['Food'], aggfunc=np.sum))

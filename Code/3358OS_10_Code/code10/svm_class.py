@@ -8,7 +8,7 @@ def classify(x, y):
     clf = GridSearchCV(SVC(random_state=42, max_iter=100), {'kernel': ['linear', 'poly', 'rbf'], 'C':[1, 10]})
 
     clf.fit(x, y)
-    print "Score", clf.score(x, y)
+    print("Score", clf.score(x, y))
     PrettyPrinter().pprint(clf.grid_scores_)
 
 rain = np.load('rain.npy')

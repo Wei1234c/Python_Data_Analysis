@@ -12,11 +12,11 @@ mid = np.ptp(sunspots)/2
 sine = mid + mid * np.sin(np.sin(t))
 
 sine_fft = np.abs(fftshift(rfft(sine)))
-print "Index of max sine FFT", np.argsort(sine_fft)[-5:]
+print("Index of max sine FFT", np.argsort(sine_fft)[-5:])
 
 
 transformed = np.abs(fftshift(rfft(sunspots)))
-print "Indices of max sunspots FFT", np.argsort(transformed)[-5:]
+print("Indices of max sunspots FFT", np.argsort(transformed)[-5:])
 
 plt.subplot(311)
 plt.plot(sunspots, label="Sunspots")

@@ -14,7 +14,7 @@ def simulate(size):
 
     speed = randn(10000)
 
-    for i in xrange(1000): 
+    for i in range(1000): 
         n = n + 1
         indices = random_integers(0, len(speed)-1, size=size)
         x = (1 + speed[indices]).prod()
@@ -27,32 +27,32 @@ def simulate(size):
 def serial():
     start = timeit.default_timer()
 
-    for i in xrange(10, 50):
+    for i in range(10, 50):
         simulate(i)
     
     end = timeit.default_timer() - start
-    print "Serial time", end
+    print("Serial time", end)
 
     return end
 
 def parallel(nprocs):
     start = timeit.default_timer()
     p = mp.Pool(nprocs)
-    print nprocs, "Pool creation time", timeit.default_timer() - start
+    print(nprocs, "Pool creation time", timeit.default_timer() - start)
 
-    p.map(simulate, [i for i in xrange(10, 50)])
+    p.map(simulate, [i for i in range(10, 50)])
     p.close()
     p.join()
 
     end = timeit.default_timer() - start
-    print nprocs, "Parallel time", end
+    print(nprocs, "Parallel time", end)
     return end
 
 if __name__ == "__main__":
     ratios = []
     baseline = serial()
 
-    for i in xrange(1, mp.cpu_count()):
+    for i in range(1, mp.cpu_count()):
         ratios.append(baseline/parallel(i))
 
     plt.xlabel('# processes')

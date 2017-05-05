@@ -23,17 +23,17 @@ def isStopWord(word):
 @profile
 def filter_corpus():
     review_words = movie_reviews.words()
-    print "# Review Words", len(review_words)
+    print("# Review Words", len(review_words))
     res = [w.lower() for w in review_words if not isStopWord(w.lower())]
-    print "# After filter", len(res)
+    print("# After filter", len(res))
 
     return res
 
 @profile
 def select_word_features(corpus):
     words = FreqDist(corpus)
-    N = int(.02 * len(words.keys()))
-    return words.keys()[:N]
+    N = int(.02 * len(list(words.keys())))
+    return list(words.keys())[:N]
 
 @profile
 def doc_features(doc):
@@ -60,5 +60,5 @@ if __name__ == "__main__":
     featuresets = make_features(labeled_docs)
     train_set, test_set = split_data(featuresets)
     classifier = NaiveBayesClassifier.train(train_set)
-    print "Accuracy", accuracy(classifier, test_set)
-    print classifier.show_most_informative_features()
+    print("Accuracy", accuracy(classifier, test_set))
+    print(classifier.show_most_informative_features())

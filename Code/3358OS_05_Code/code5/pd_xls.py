@@ -7,6 +7,6 @@ a = np.random.randn(365, 4)
 
 tmpf = NamedTemporaryFile(suffix='.xlsx')
 df = pd.DataFrame(a)
-print tmpf.name
+print(tmpf.name)
 df.to_excel(tmpf.name, sheet_name='Random Data')
-print "Means\n", pd.read_excel(tmpf.name, 'Random Data').mean()
+print("Means\n", pd.read_excel(tmpf.name, 'Random Data').mean())

@@ -5,9 +5,9 @@ import scipy as sp
 import pydoc
 
 
-print "NumPy version", np.__version__
-print "SciPy version", sp.__version__
-print "Matplotlib version", mpl.__version__
+print("NumPy version", np.__version__)
+print("SciPy version", sp.__version__)
+print("Matplotlib version", mpl.__version__)
 
 def clean(astr):
    s = astr
@@ -27,12 +27,12 @@ def print_desc(prefix, pkg_path):
             docstr = clean(docstr)
             start = docstr.find("DESCRIPTION")
             docstr = docstr[start: start + 140]
-            print name, docstr
+            print(name, docstr)
          except:
             continue
 
 print_desc("numpy", np.__path__)
-print
-print
-print
+print()
+print()
+print()
 print_desc("scipy", sp.__path__)

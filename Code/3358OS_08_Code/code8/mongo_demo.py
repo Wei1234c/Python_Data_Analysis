@@ -9,11 +9,11 @@ db = client.test_database
 
 data_loader = sm.datasets.sunspots.load_pandas()
 df = data_loader.data
-rows = json.loads(df.T.to_json()).values()
+rows = list(json.loads(df.T.to_json()).values())
 db.sunspots.insert(rows)
 
 cursor = db['sunspots'].find({})
 df =  pd.DataFrame(list(cursor))
-print df
+print(df)
 
 db.drop_collection('sunspots')

@@ -20,7 +20,7 @@ rows = [tuple(x) for x in df.values]
 for row in rows:
     session.execute(query, row)
 
-print session.execute("SELECT COUNT(*) FROM sunspots")
+print(session.execute("SELECT COUNT(*) FROM sunspots"))
 
 session.execute('DROP KEYSPACE mykeyspace') 
 cluster.shutdown()

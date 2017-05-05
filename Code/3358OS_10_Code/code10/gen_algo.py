@@ -34,7 +34,7 @@ stats.register("max", np.max)
 
 algorithms.eaSimple(pop, toolbox, cxpb=0.5, mutpb=0.2, ngen=80, stats=stats, halloffame=hof)
 
-print shapiro(hof[0])[1]
+print(shapiro(hof[0])[1])
 plt.hist(hof[0])
 plt.grid(True)
 plt.show()

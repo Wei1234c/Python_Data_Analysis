@@ -8,4 +8,4 @@ df = data_loader.data
 data = df.T.to_json()
 r.set('sunspots', data)
 blob = r.get('sunspots')
-print pd.read_json(blob)
+print(pd.read_json(blob))

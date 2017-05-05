@@ -10,13 +10,13 @@ punctuation = set(string.punctuation)
 filtered = [w.lower() for w in words if w.lower() not in sw and w.lower() not in punctuation]
 
 fd = nltk.FreqDist(filtered)
-print "Words", fd.keys()[:5]
-print "Counts", fd.values()[:5]
-print "Max", fd.max()
-print "Count", fd['d']
+print("Words", list(fd.keys())[:5])
+print("Counts", list(fd.values())[:5])
+print("Max", fd.max())
+print("Count", fd['d'])
 
 fd = nltk.FreqDist(nltk.bigrams(filtered))
-print "Bigrams", fd.keys()[:5]
-print "Counts", fd.values()[:5]
-print "Bigram Max", fd.max()
-print "Bigram count", fd[('let', 'vs')]
+print("Bigrams", list(fd.keys())[:5])
+print("Counts", list(fd.values())[:5])
+print("Bigram Max", fd.max())
+print("Bigram count", fd[('let', 'vs')])

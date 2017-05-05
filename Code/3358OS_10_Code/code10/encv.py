@@ -8,7 +8,7 @@ def regress(x, y, title):
     clf = ElasticNetCV(max_iter=200, cv=10, l1_ratio = [.1, .5, .7, .9, .95, .99, 1])
 
     clf.fit(x, y)
-    print "Score", clf.score(x, y)
+    print("Score", clf.score(x, y))
 
     pred = clf.predict(x)
     plt.title("Scatter plot of prediction and " + title)

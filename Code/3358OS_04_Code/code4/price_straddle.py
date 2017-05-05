@@ -21,4 +21,4 @@ def get_straddle():
    return call + put
 
 if __name__ == "__main__":
-   print get_straddle()
+   print(get_straddle())

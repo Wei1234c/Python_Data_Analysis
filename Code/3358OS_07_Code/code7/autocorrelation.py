@@ -12,7 +12,7 @@ norm = np.sum(y ** 2)
 correlated = np.correlate(y, y, mode='full')/norm
 res = correlated[len(correlated)/2:]
 
-print np.argsort(res)[-5:]
+print(np.argsort(res)[-5:])
 plt.plot(res)
 plt.grid(True)
 plt.xlabel("Lag")

@@ -2,7 +2,7 @@ import pkgutil as pu
 import pydoc
 import sklearn
 
-print "sklearn version", sklearn.__version__
+print("sklearn version", sklearn.__version__)
 
 def clean(astr):
    s = astr
@@ -22,7 +22,7 @@ def print_desc(prefix, pkg_path):
             docstr = clean(docstr)
             start = docstr.find("DESCRIPTION")
             docstr = docstr[start: start + 140]
-            print name, docstr
+            print(name, docstr)
          except:
             continue
 

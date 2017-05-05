@@ -13,7 +13,7 @@ def classify(x, y):
       clf.fit(x[train], y[train])
       scores.append(clf.score(x[test], y[test]))
 
-    print np.mean(scores)
+    print(np.mean(scores))
 
 rain = np.load('rain.npy')
 dates = np.load('doy.npy')

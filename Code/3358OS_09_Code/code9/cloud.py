@@ -13,8 +13,8 @@ review_words = movie_reviews.words()
 filtered = [w.lower() for w in review_words if not isStopWord(w.lower())]
 
 words = FreqDist(filtered)
-N = int(.01 * len(words.keys()))
-tags = words.keys()[:N]
+N = int(.01 * len(list(words.keys())))
+tags = list(words.keys())[:N]
 
 for tag in tags:
-    print tag, ':', words[tag]
+    print(tag, ':', words[tag])

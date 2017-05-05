@@ -17,9 +17,9 @@ def match(a, b):
 
 def filter_corpus():
     review_words = movie_reviews.words()
-    print "# Review Words", len(review_words)
+    print("# Review Words", len(review_words))
     res = cm.filter_sw(review_words)
-    print "# After filter", len(res)
+    print("# After filter", len(res))
 
     return res
 

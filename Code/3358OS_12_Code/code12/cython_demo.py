@@ -43,5 +43,5 @@ if __name__ == "__main__":
     featuresets = make_features(labeled_docs)
     train_set, test_set = split_data(featuresets)
     classifier = NaiveBayesClassifier.train(train_set)
-    print "Accuracy", accuracy(classifier, test_set)
-    print classifier.show_most_informative_features()
+    print("Accuracy", accuracy(classifier, test_set))
+    print(classifier.show_most_informative_features())

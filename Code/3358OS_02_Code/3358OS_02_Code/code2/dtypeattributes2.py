@@ -6,19 +6,19 @@ import numpy as np
 # Run from the commandline with 
 #
 #  python dtypeattributes2.py
-print "In: t = dtype('Float64')"
+print("In: t = dtype('Float64')")
 t = np.dtype('Float64')
 
-print "In: t.char"
-print t.char
+print("In: t.char")
+print(t.char)
 #Out: 'd'
 
-print "In: t.type"
-print t.type
+print("In: t.type")
+print(t.type)
 #Out: <type 'numpy.float64'>
 
-print "In: t.str"
-print t.str
+print("In: t.str")
+print(t.str)
 #Out: '<f8'
 
 

@@ -8,7 +8,7 @@ table = db["books"]
 table.insert(dict(title="NumPy Beginner's Guide", author='Ivan Idris'))
 table.insert(dict(title="NumPy Cookbook", author='Ivan Idris'))
 table.insert(dict(title="Learning NumPy", author='Ivan Idris'))
-print read_sql('SELECT * FROM books', db.executable.raw_connection()) 
+print(read_sql('SELECT * FROM books', db.executable.raw_connection())) 
 
 data_loader = sm.datasets.sunspots.load_pandas()
 df = data_loader.data
@@ -16,7 +16,7 @@ write_frame(df, "sunspots", db.executable.raw_connection())
 table = db['sunspots']
 
 for row in table.find(_limit=5):
-   print row
+   print(row)
 
-print "Tables", db.tables
+print("Tables", db.tables)
 

@@ -2,7 +2,7 @@ import jug.mapreduce
 from jug.compound import CompoundTask
 import cython_module as cm
 import cytoolz
-import cPickle
+import pickle
 
 def get_txts():
     return [(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'), (2, 'Donec a elit pharetra, malesuada massa vitae, elementum dolor.'), (3, 'Integer a tortor ac mi vehicula tempor at a nunc.')]

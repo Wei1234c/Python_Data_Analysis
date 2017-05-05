@@ -7,37 +7,37 @@ import numpy as np
 #
 #  python arrayattributes.py
 a = np.arange(5)
-print "In: a = arange(5)"
+print("In: a = arange(5)")
 
-print "In: a.dtype"
-print a.dtype
+print("In: a.dtype")
+print(a.dtype)
 #Out: dtype('int64')
-print
+print()
 
-print "In: a.shape"
-print a.shape
+print("In: a.shape")
+print(a.shape)
 #Out: (5,)
-print
+print()
 
-print "In: a"
-print a
+print("In: a")
+print(a)
 #Out[4]: array([0, 1, 2, 3, 4])
-print
+print()
 
 m = np.array([np.arange(2), np.arange(2)])
 
-print "In: m"
-print m
+print("In: m")
+print(m)
 #Out: 
 #array([[0, 1],
 #       [0, 1]])
-print
+print()
 
-print "In: m.shape"
-print m.shape
+print("In: m.shape")
+print(m.shape)
 #Out: (2, 2)
 
-print "In: m.dtype"
-print m.dtype
+print("In: m.dtype")
+print(m.dtype)
 #Out: dtype('int64')
-print
+print()

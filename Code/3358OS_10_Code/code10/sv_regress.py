@@ -18,7 +18,7 @@ def regress(x, y, ncpus, title):
     plt.title(title)
     plt.plot(train_sizes, train_scores.mean(axis=1), label="Train score")
     plt.plot(train_sizes, test_scores.mean(axis=1), '--', label="Test score")
-    print "Max test score " + title, test_scores.max()
+    print("Max test score " + title, test_scores.max())
     plt.grid(True)
     plt.legend(loc='best')
     plt.show()

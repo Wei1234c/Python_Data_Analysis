@@ -25,8 +25,8 @@ def numpysum(n):
    return c
 
 def pythonsum(n):
-   a = range(n)
-   b = range(n)
+   a = list(range(n))
+   b = list(range(n))
    c = []
 
    for i in range(len(a)):
@@ -42,11 +42,11 @@ size = int(sys.argv[1])
 start = datetime.now()
 c = pythonsum(size)
 delta = datetime.now() - start
-print "The last 2 elements of the sum", c[-2:]
-print "PythonSum elapsed time in microseconds", delta.microseconds
+print("The last 2 elements of the sum", c[-2:])
+print("PythonSum elapsed time in microseconds", delta.microseconds)
 
 start = datetime.now()
 c = numpysum(size)
 delta = datetime.now() - start
-print "The last 2 elements of the sum", c[-2:]
-print "NumPySum elapsed time in microseconds", delta.microseconds
+print("The last 2 elements of the sum", c[-2:])
+print("NumPySum elapsed time in microseconds", delta.microseconds)

@@ -13,10 +13,10 @@ h5file.createArray(root, "array", a)
 h5file.close()
 
 h5file = tables.openFile(tmpf.name, "r")
-print getsize(tmpf.name)
+print(getsize(tmpf.name))
 
 for node in h5file.iterNodes(h5file.root):
    b = node.read()
-   print type(b), b.shape
+   print(type(b), b.shape)
    
 h5file.close()

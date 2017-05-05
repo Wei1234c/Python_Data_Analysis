@@ -14,7 +14,7 @@ labels = aff_pro.labels_
 styles = ['o', 'x', '^']
 
 for style, label in zip(styles, np.unique(labels)):
-   print label
+   print(label)
    plt.plot(x[labels == label], style, label=label)
 
 plt.title("Clustering Blobs")

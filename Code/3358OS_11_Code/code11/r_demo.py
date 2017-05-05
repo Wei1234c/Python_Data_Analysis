@@ -11,8 +11,8 @@ df = com.load_data('morley')
 df['Speed'] = df['Speed'] + 299000
 
 samples = dict(list(df.groupby('Expt')))
-samples = np.array([samples[i]['Speed'].values for i in samples.keys()])
-print "Kruskal", kruskal(samples[0], samples[1], samples[2], samples[3], samples[4])
+samples = np.array([samples[i]['Speed'].values for i in list(samples.keys())])
+print("Kruskal", kruskal(samples[0], samples[1], samples[2], samples[3], samples[4]))
 
 plt.title('Speed of light')
 plt.plot(samples.min(axis=1), 'x', label='min')

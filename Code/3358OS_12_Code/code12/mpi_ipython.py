@@ -30,5 +30,5 @@ def jackknife(a, parallel=True):
 
 if __name__ == "__main__":
     skiplist = np.arange(39, dtype='int')
-    print jackknife(skiplist, False)
+    print(jackknife(skiplist, False))
     

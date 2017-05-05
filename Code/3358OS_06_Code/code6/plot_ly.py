@@ -23,4 +23,4 @@ gpu_counts = np.log(df['gpu_trans_count'].values)
 
 data = Data([Box(y=counts), Box(y=gpu_counts)]) 
 plot_url = py.plot(data, filename='moore-law-scatter')
-print plot_url
+print(plot_url)

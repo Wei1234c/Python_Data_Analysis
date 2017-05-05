@@ -13,12 +13,12 @@ ymax = lena.shape[1]
 # Set values on diagonal to 0
 # x 0-xmax
 # y 0-ymax
-lena[range(xmax), range(ymax)] = 0
+lena[list(range(xmax)), list(range(ymax))] = 0
 
 # Set values on other diagonal to 0
 # x xmax-0
 # y 0-ymax
-lena[range(xmax-1,-1,-1), range(ymax)] = 0
+lena[list(range(xmax-1,-1,-1)), list(range(ymax))] = 0
 
 # Plot Lena with diagonal lines set to 0
 plt.imshow(lena)

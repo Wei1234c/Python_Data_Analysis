@@ -11,7 +11,7 @@ gpu = gpu.groupby('year').aggregate(np.mean)
 
 df = pd.merge(df, gpu, how='outer', left_index=True, right_index=True)
 df = df.replace(np.nan, 0)
-print df
+print(df)
 years = df.index.values
 counts = df['trans_count'].values
 gpu_counts = df['gpu_trans_count'].values

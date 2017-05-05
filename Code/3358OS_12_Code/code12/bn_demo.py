@@ -16,15 +16,15 @@ def time(code, setup, n):
 
 if __name__ == '__main__':
     n = 10**3
-    print n, "pass", max(time("pass", "", n))
-    print n, "min np.median", min(time('np.median(a)', setup, n))
-    print n, "min bn.median", min(time('bn.median(a)', setup, n))
+    print(n, "pass", max(time("pass", "", n)))
+    print(n, "min np.median", min(time('np.median(a)', setup, n)))
+    print(n, "min bn.median", min(time('bn.median(a)', setup, n)))
     a = np.arange(7)
-    print "Median diff", np.median(a) - bn.median(a)
+    print("Median diff", np.median(a) - bn.median(a))
     func, _ = bn.func.median_selector(a, axis=0)
-    print "Bottleneck median func name", func
+    print("Bottleneck median func name", func)
 
-    print n, "min scipy.stats.rankdata", min(time('rankdata(a)', setup, n))
-    print n, "min bn.rankdata", min(time('bn.rankdata(a)', setup, n))
+    print(n, "min scipy.stats.rankdata", min(time('rankdata(a)', setup, n)))
+    print(n, "min bn.rankdata", min(time('bn.rankdata(a)', setup, n)))
     func, _ = bn.func.rankdata_selector(a, axis=0)
-    print "Bottleneck rankdata func name", func
+    print("Bottleneck rankdata func name", func)

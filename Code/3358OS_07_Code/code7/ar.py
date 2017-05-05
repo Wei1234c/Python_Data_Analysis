@@ -21,16 +21,16 @@ sunspots = data_loader.data["SUNACTIVITY"].values
 
 cutoff = .9 * len(sunspots)
 params = fit(sunspots[:cutoff])
-print "Params", params
+print("Params", params)
 
 pred = params[0] * sunspots[cutoff-1:-1] + params[1] * sunspots[cutoff-10:-10]
 actual = sunspots[cutoff:]
-print "Root mean square error", np.sqrt(np.mean((actual - pred) ** 2))
-print "Mean absolute error", np.mean(np.abs(actual - pred))
-print "Mean absolute percentage error", 100 * np.mean(np.abs(actual - pred)/actual)
+print("Root mean square error", np.sqrt(np.mean((actual - pred) ** 2)))
+print("Mean absolute error", np.mean(np.abs(actual - pred)))
+print("Mean absolute percentage error", 100 * np.mean(np.abs(actual - pred)/actual))
 mid = (actual + pred)/2
-print "Symmetric Mean absolute percentage error", 100 * np.mean(np.abs(actual - pred)/mid)
-print "Coefficient of determination", 1 - ((actual - pred) ** 2).sum()/ ((actual - actual.mean()) ** 2).sum()
+print("Symmetric Mean absolute percentage error", 100 * np.mean(np.abs(actual - pred)/mid))
+print("Coefficient of determination", 1 - ((actual - pred) ** 2).sum()/ ((actual - actual.mean()) ** 2).sum())
 year_range = data_loader.data["YEAR"].values[cutoff:]
 plt.plot(year_range, actual, 'o', label="Sunspots")
 plt.plot(year_range, pred, 'x', label="Prediction")

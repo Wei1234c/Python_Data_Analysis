@@ -2,7 +2,7 @@ import scipy.misc
 import matplotlib.pyplot as plt
 
 lena = scipy.misc.lena()
-print lena.shape
+print(lena.shape)
 acopy = lena.copy()
 aview = lena.view()
 

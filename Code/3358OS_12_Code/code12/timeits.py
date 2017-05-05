@@ -67,26 +67,26 @@ def time(code, n):
     return round(1000* np.array(times)/n, 3)
 
 if __name__ == '__main__':
-    print "Best of 3 times per loop in milliseconds"
+    print("Best of 3 times per loop in milliseconds")
     n = 10
-    print "zero_init ", time("zero_init()", n)
-    print "zero_init2", time("zero_init2()", n)
-    print "zero_init3", time("zero_init3()", n)
-    print "dict_copy ", time("dict_copy()", n)
-    print
+    print("zero_init ", time("zero_init()", n))
+    print("zero_init2", time("zero_init2()", n))
+    print("zero_init3", time("zero_init3()", n))
+    print("dict_copy ", time("dict_copy()", n))
+    print()
 
     n = 10**2
-    print "isStopWord ", time('[w.lower() for w in txt if not isStopWord(w.lower())]', n)
-    print "isStopWord2", time('[w.lower() for w in txt if not isStopWord2(w.lower())]', n)
-    print "isStopWord3", time('[w.lower() for w in txt if not isStopWord3(w.lower())]', n)
-    print "isStopWord4", time('[w.lower() for w in txt if not isStopWord4(w.lower())]', n)
-    print "Cythonized isStopWord", time('[w.lower() for w in txt if not cm.isStopWord(w.lower())]', n)
-    print "Cythonized filter_sw()", time('cm.filter_sw(txt)', n)
-    print
+    print("isStopWord ", time('[w.lower() for w in txt if not isStopWord(w.lower())]', n))
+    print("isStopWord2", time('[w.lower() for w in txt if not isStopWord2(w.lower())]', n))
+    print("isStopWord3", time('[w.lower() for w in txt if not isStopWord3(w.lower())]', n))
+    print("isStopWord4", time('[w.lower() for w in txt if not isStopWord4(w.lower())]', n))
+    print("Cythonized isStopWord", time('[w.lower() for w in txt if not cm.isStopWord(w.lower())]', n))
+    print("Cythonized filter_sw()", time('cm.filter_sw(txt)', n))
+    print()
 
-    print "FreqDist", time("nltk.FreqDist(txt)", n)
-    print "Default dict", time('freq_dict(txt)', n)
-    print "Counter", time('collections.Counter(txt)', n)
-    print "Series", time('pd.Series(txt).value_counts()', n)
-    print "Cytoolz", time('cytoolz.frequencies(txt)', n)
-    print "Cythonized freq_dict", time('cm.freq_dict(txt)', n)
+    print("FreqDist", time("nltk.FreqDist(txt)", n))
+    print("Default dict", time('freq_dict(txt)', n))
+    print("Counter", time('collections.Counter(txt)', n))
+    print("Series", time('pd.Series(txt).value_counts()', n))
+    print("Cytoolz", time('cytoolz.frequencies(txt)', n))
+    print("Cythonized freq_dict", time('cm.freq_dict(txt)', n))

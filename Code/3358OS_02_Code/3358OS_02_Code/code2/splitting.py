@@ -5,18 +5,18 @@ import numpy as np
 # Run from the commandline with 
 #
 #  python splitting.py
-print "In: a = arange(9).reshape(3, 3)"
+print("In: a = arange(9).reshape(3, 3)")
 a = np.arange(9).reshape(3, 3)
 
-print "In: a"
-print a
+print("In: a")
+print(a)
 #Out: 
 #array([[0, 1, 2],
 #       [3, 4, 5],
 #       [6, 7, 8]])
 
-print "In: hsplit(a, 3)"
-print np.hsplit(a, 3)
+print("In: hsplit(a, 3)")
+print(np.hsplit(a, 3))
 #Out: 
 #[array([[0],
 #       [3],
@@ -28,8 +28,8 @@ print np.hsplit(a, 3)
 #       [5],
 #       [8]])]
 
-print "In: split(a, 3, axis=1)"
-print np.split(a, 3, axis=1)
+print("In: split(a, 3, axis=1)")
+print(np.split(a, 3, axis=1))
 #Out: 
 #[array([[0],
 #       [3],
@@ -41,19 +41,19 @@ print np.split(a, 3, axis=1)
 #       [5],
 #       [8]])]
 
-print "In: vsplit(a, 3)"
-print np.vsplit(a, 3)
+print("In: vsplit(a, 3)")
+print(np.vsplit(a, 3))
 #Out: [array([[0, 1, 2]]), array([[3, 4, 5]]), array([[6, 7, 8]])]
 
-print "In: split(a, 3, axis=0)"
-print np.split(a, 3, axis=0)
+print("In: split(a, 3, axis=0)")
+print(np.split(a, 3, axis=0))
 #Out: [array([[0, 1, 2]]), array([[3, 4, 5]]), array([[6, 7, 8]])]
 
-print "In: c = arange(27).reshape(3, 3, 3)"
+print("In: c = arange(27).reshape(3, 3, 3)")
 c = np.arange(27).reshape(3, 3, 3)
 
-print "In: c"
-print c
+print("In: c")
+print(c)
 #Out: 
 #array([[[ 0,  1,  2],
 #        [ 3,  4,  5],
@@ -67,8 +67,8 @@ print c
 #        [21, 22, 23],
 #        [24, 25, 26]]])
 
-print "In: dsplit(c, 3)"
-print np.dsplit(c, 3)
+print("In: dsplit(c, 3)")
+print(np.dsplit(c, 3))
 #Out: 
 #[array([[[ 0],
 #        [ 3],

@@ -8,15 +8,15 @@ import numpy as np
 #  python dtypeattributes.py
 
 
-print "In: a = array([[1,2],[3,4]])"
+print("In: a = array([[1,2],[3,4]])")
 a = np.array([[1,2],[3,4]])
 
-print "In: a.dtype.byteorder"
-print a.dtype.byteorder
+print("In: a.dtype.byteorder")
+print(a.dtype.byteorder)
 #Out: '='
 
-print "In: a.dtype.itemsize"
-print a.dtype.itemsize
+print("In: a.dtype.itemsize")
+print(a.dtype.itemsize)
 #Out: 8
 
 

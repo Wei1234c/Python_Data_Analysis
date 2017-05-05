@@ -8,4 +8,4 @@ with db_session:
     data_loader = sm.datasets.sunspots.load_pandas()
     df = data_loader.data
     write_frame(df, "sunspots", db.get_connection()) 
-    print db.select("count(*) FROM sunspots")
+    print(db.select("count(*) FROM sunspots"))

@@ -14,7 +14,7 @@ random.seed(42)
 random.shuffle(labeled_docs)
 
 review_words = movie_reviews.words()
-print "# Review Words", len(review_words)
+print("# Review Words", len(review_words))
 
 sw = set(stopwords.words('english'))
 punctuation = set(string.punctuation)
@@ -23,11 +23,11 @@ def isStopWord(word):
     return word in sw or word in punctuation
 
 filtered = [w.lower() for w in review_words if not isStopWord(w.lower())]
-print "# After filter", len(filtered)
+print("# After filter", len(filtered))
 
 words = FreqDist(filtered)
-N = int(.05 * len(words.keys()))
-word_features = words.keys()[:N]
+N = int(.05 * len(list(words.keys())))
+word_features = list(words.keys())[:N]
 
 def doc_features(doc):
     doc_words = FreqDist(w for w in doc if not isStopWord(w))
@@ -39,6 +39,6 @@ def doc_features(doc):
 featuresets = [(doc_features(d), c) for (d,c) in labeled_docs]
 train_set, test_set = featuresets[200:], featuresets[:200]
 classifier = NaiveBayesClassifier.train(train_set)
-print "Accuracy", accuracy(classifier, test_set)
+print("Accuracy", accuracy(classifier, test_set))
 
-print classifier.show_most_informative_features()
+print(classifier.show_most_informative_features())

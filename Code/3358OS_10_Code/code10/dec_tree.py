@@ -3,7 +3,7 @@ from sklearn import tree
 from sklearn.grid_search import RandomizedSearchCV
 from scipy.stats import randint as sp_randint
 import pydot
-import StringIO
+import io
 import numpy as np
 from tempfile import NamedTemporaryFile
 
@@ -24,14 +24,14 @@ params = {"max_depth": [2, None],
 rscv = RandomizedSearchCV(clf, params)
 rscv.fit(x_train,y_train)
 
-sio = StringIO.StringIO()
+sio = io.StringIO()
 tree.export_graphviz(rscv.best_estimator_, out_file=sio, feature_names=['day-of-year','yest'])
 dec_tree = pydot.graph_from_dot_data(sio.getvalue())
 
 with NamedTemporaryFile(prefix='rain', suffix='.png', delete=False) as f:
     dec_tree.write_png(f.name)
-    print "Written figure to", f.name
+    print("Written figure to", f.name)
 
-print "Best Train Score", rscv.best_score_
-print "Test Score", rscv.score(x_test, y_test)
-print "Best params", rscv.best_params_
+print("Best Train Score", rscv.best_score_)
+print("Test Score", rscv.score(x_test, y_test))
+print("Best params", rscv.best_params_)

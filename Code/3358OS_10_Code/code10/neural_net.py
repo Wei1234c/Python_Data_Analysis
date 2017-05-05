@@ -27,6 +27,6 @@ valid = [x[N:], y[N:]]
 e.run(train, valid)
 
 pred = e.network(x[N:]).ravel()
-print "Pred Min", pred.min(), "Max", pred.max()
-print "Y Min", y.min(), "Max", y.max()
-print "Accuracy", accuracy_score(y[N:], pred >= .5)
+print("Pred Min", pred.min(), "Max", pred.max())
+print("Y Min", y.min(), "Max", y.max())
+print("Accuracy", accuracy_score(y[N:], pred >= .5))
